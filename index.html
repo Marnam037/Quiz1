@@ -27,10 +27,10 @@
       
 
         <ons-tabbar swipeable position="auto">
-            <ons-tab page="tab1.html" label="Tab 1" icon="ion-home, material:md-home" badge="7" active>
+            <ons-tab page="tab1.html" label="Home" icon="ion-home, material:md-home" badge="7" active>
             </ons-tab>
             
-            <ons-tab page="tab2.html" label="Tab 2" icon="md-settings" active-icon="md-face">
+            <ons-tab page="tab2.html" label="Cart" icon="md-settings" active-icon="md-face">
             </ons-tab>
         </ons-tabbar>
     </ons-page>
@@ -56,7 +56,7 @@
                                   
                                 </ons-carousel-item>
                               </ons-carousel>
-                              <ons-row class="category">
+                              <ons-row class="category" style="text-align: center">
                                     <ons-col modifier="nodivider" id="Category_1" onclick="openPlaylist(this.id)">
                                       <div class="category_wrapper">
                                         <figure class="category_thumbnail">
@@ -82,7 +82,7 @@
                                             </div>
                                           </ons-col>
                                   </ons-row>
-                                  <ons-row class="category">  
+                                  <ons-row class="category" style="text-align: center">  
                                     <ons-col modifier="nodivider" id="Category_3" onclick="openPlaylist(this.id)">
                                       <div class="category_wrapper">
                                         <figure class="category_thumbnail">
@@ -108,7 +108,7 @@
                                       </div>
                                     </ons-col>
                                   </ons-row>
-                                  <ons-row class="category">    
+                                  <ons-row class="category" style="text-align: center">    
                                     <ons-col modifier="nodivider" id="Category_5" onclick="openPlaylist(this.id)">
                                       <div class="category_wrapper">
                                         <figure class="category_thumbnail">
@@ -233,7 +233,7 @@
                     </div>
                     <div class="right">
                             <ons-toolbar-button>
-                                <ons-icon icon="md-trash-alt"></ons-icon>
+                                <ons-icon icon="md-delete"></ons-icon>
                             </ons-toolbar-button>
                         </div>
                 </ons-list-item>
@@ -247,7 +247,7 @@
                     </div>
                     <div class="right">
                             <ons-toolbar-button>
-                                <ons-icon icon="md-trash-alt"></ons-icon>
+                                <ons-icon icon="md-delete"></ons-icon>
                             </ons-toolbar-button>
                         </div>
                 </ons-list-item>
@@ -262,7 +262,7 @@
                     </div>
                     <div class="right">
                             <ons-toolbar-button>
-                                <ons-icon icon="fa-trash-alt"></ons-icon>
+                                <ons-icon icon="md-delete"></ons-icon>
                             </ons-toolbar-button>
                         </div>
                 </ons-list-item>
@@ -270,5 +270,11 @@
         </template>
 
 </body>
+<script>
+    document.addEventListener('prechange', function(event) {
+  document.querySelector('ons-toolbar .center')
+    .innerHTML = event.tabItem.getAttribute('label');
+});
+</script>
 
 </html>
